@@ -7,9 +7,21 @@ Access the desktop through **VNC** (port `5901`) or directly in your **browser**
 
 ## Available Images
 
+### Debian Based
 | Image | Base |
 |---|---|
 | `hudsonventura/headless:ubuntu_24.04` | Ubuntu 24.04 LTS |
+
+
+### RHEL Based
+| Image | Base |
+|---|---|
+| `hudsonventura/headless:almalinux_9` | AlmaLinux 9 |
+
+### Debian Based
+| Image | Base |
+|---|---|
+| `hudsonventura/headless:alpine_3` | Alpine 3.21 |
 
 ---
 
@@ -20,7 +32,11 @@ Create a `docker-compose.yml` file:
 ```yaml
 services:
   headless:
+    # Choose your base
     image: hudsonventura/headless:ubuntu_24.04
+    #image: hudsonventura/headless:almalinux_9
+    #image: hudsonventura/headless:alpine_3
+    
     ports:
       - "5901:5901"
       - "6901:6901"
