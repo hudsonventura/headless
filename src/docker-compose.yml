@@ -1,0 +1,14 @@
+services:
+
+  ubuntu_24.04:
+    image: hudsonventura/headless:ubuntu_24.04
+    build:
+      context: ./
+      dockerfile: Dockerfile_ubuntu_24.04
+    ports:
+      - "5901:5901"
+      - "6901:6901"
+    environment:
+      - VNC_PW=password
+      - SCREEN_RESOLUTION=1280x720
+    restart: unless-stopped
