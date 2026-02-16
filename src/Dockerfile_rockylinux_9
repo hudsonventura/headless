@@ -23,6 +23,7 @@ RUN dnf install -y \
     xorg-x11-xauth \
     xterm \
     git \
+    && ln -s /usr/bin/python3 /usr/bin/python \
     && dnf clean all
 
 # Setup user

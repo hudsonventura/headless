@@ -8,16 +8,16 @@ Access the desktop through **VNC** (port `5901`) or directly in your **browser**
 ## Available Images
 
 ### Debian Based
-| Image | Base |
-|---|---|
-| `hudsonventura/headless:ubuntu_24.04` | Ubuntu 24.04 LTS |
+| Image | Base | Image Size | RAM Consumption |
+|---|---|---|---|
+| `hudsonventura/headless:ubuntu_24.04` | Ubuntu 24.04 LTS | 879MB |  ~ 52MB
 
 
 ### RHEL Based
-| Image | Base |
-|---|---|
-| `hudsonventura/headless:almalinux_9`  | AlmaLinux 9   |
-| `hudsonventura/headless:rockylinux_9` | Rocky Linux 9 |
+| Image | Base | Image Size | RAM Consumption |
+|---|---|---|---|
+| `hudsonventura/headless:almalinux_9`  | AlmaLinux 9   | 957MB | ~ 44MB |
+| `hudsonventura/headless:rockylinux_9` | Rocky Linux 9 | 1.11GB | ~ 45MB |
 
 
 

@@ -32,6 +32,14 @@ mkdir -p ~/.vnc
 echo "${VNC_PW:-password}" | vncpasswd -f > ~/.vnc/passwd 2>>"$LOG"
 chmod 600 ~/.vnc/passwd
 
+# Create xstartup file to keep Xvnc running
+cat > ~/.vnc/xstartup <<EOF
+#!/bin/sh
+# Prevent Xvnc from killing itself when script finishes
+exec tail -f /dev/null
+EOF
+chmod +x ~/.vnc/xstartup
+
 # Clean up existing VNC locks
 vncserver -kill :$DISPLAY_NUM 2>/dev/null || true
 rm -rf /tmp/.X11-unix/X$DISPLAY_NUM
@@ -86,4 +94,5 @@ echo ""
 # ============================================================
 # Keep container alive
 # ============================================================
+tail -f "$LOG" &
 wait
