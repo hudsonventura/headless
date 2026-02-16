@@ -25,4 +25,18 @@ services:
       - VNC_PW=password
       - SCREEN_RESOLUTION=1280x720
     restart: unless-stopped
+    
+    
+  rockylinux_9:
+    image: hudsonventura/headless:rockylinux_9
+    build:
+      context: ./
+      dockerfile: Dockerfile_rockylinux_9
+    ports:
+      - "5903:5901"
+      - "6903:6901"
+    environment:
+      - VNC_PW=password
+      - SCREEN_RESOLUTION=1280x720
+    restart: unless-stopped
 

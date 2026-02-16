@@ -16,12 +16,10 @@ Access the desktop through **VNC** (port `5901`) or directly in your **browser**
 ### RHEL Based
 | Image | Base |
 |---|---|
-| `hudsonventura/headless:almalinux_9` | AlmaLinux 9 |
+| `hudsonventura/headless:almalinux_9`  | AlmaLinux 9   |
+| `hudsonventura/headless:rockylinux_9` | Rocky Linux 9 |
 
-### Debian Based
-| Image | Base |
-|---|---|
-| `hudsonventura/headless:alpine_3` | Alpine 3.21 |
+
 
 ---
 
