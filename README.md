@@ -63,8 +63,8 @@ docker compose down
 ```
 
 ## Use to build your image
-Those image is to you genererate your own images.  
-How example, create a file `Dockerfile` and put this content to create a container with Firefox:
+Those image is to you generate your own images.  
+ForHow example, create a file `Dockerfile` and put this content to create a container with Firefox:
 ```Dockerfile
 FROM hudsonventura/headless:ubuntu_24.04
 
@@ -92,28 +92,7 @@ RUN apt-get update && apt-get install -y \
 | `5901` | VNC server (connect with any VNC client) |
 | `6901` | noVNC web client (access via browser) |
 
----
 
-## Building from Source
-
-Clone the repository:
-
-```bash
-git clone https://github.com/hudsonventura/headless.git
-cd headless
-```
-
-Build the image:
-
-```bash
-docker compose build
-```
-
-Run it:
-
-```bash
-docker compose up -d
-```
 
 ---
 
