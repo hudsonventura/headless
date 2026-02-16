@@ -33,7 +33,7 @@ services:
     # Choose your base
     image: hudsonventura/headless:ubuntu_24.04
     #image: hudsonventura/headless:almalinux_9
-    #image: hudsonventura/headless:alpine_3
+    #image: hudsonventura/headless:rockylinux_9
     
     ports:
       - "5901:5901"
@@ -60,6 +60,18 @@ To stop:
 
 ```bash
 docker compose down
+```
+
+## Use to build your image
+Those image is to you genererate your own images.  
+How example, create a file `Dockerfile` and put this content to create a container with Firefox:
+```Dockerfile
+FROM hudsonventura/headless:ubuntu_24.04
+
+# Add your applications here
+RUN apt-get update && apt-get install -y \
+    firefox \
+    && rm -rf /var/lib/apt/lists/*
 ```
 
 ---
