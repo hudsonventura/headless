@@ -1,7 +1,6 @@
 services:
 
   chromium-test:
-    #image: hudsonventura/headless:ubuntu_24.04 #The image information is on Dockerfile
     build:
       context: ./
       dockerfile: Dockerfile
