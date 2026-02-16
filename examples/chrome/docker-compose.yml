@@ -1,0 +1,24 @@
+services:
+
+  chromium-test:
+    #image: hudsonventura/headless:ubuntu_24.04 #The image information is on Dockerfile
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5901:5901"
+      - "6901:6901"
+    environment:
+      - VNC_PW=password
+      - SCREEN_RESOLUTION=800x600
+    restart: unless-stopped
+
+    # The command below wait the X server to be ready and then start the chrome. If chrome closes, the container will restart.
+    command: >
+      sh -c "/start.sh &
+            until xdpyinfo -display :1 >/dev/null 2>&1; do
+              echo 'Waiting for X...';
+              sleep 1;
+            done;
+            DISPLAY=:1 google-chrome --no-sandbox"
+
